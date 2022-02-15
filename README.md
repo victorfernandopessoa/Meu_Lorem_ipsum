@@ -1,4 +1,4 @@
-# Meu_Lorem_ipsum
+# < Meu_Lorem_ipsum />
 Apenas uma aplicação de gerador de parágrafos.
 
 projeto ainda em desenvolvimento.
