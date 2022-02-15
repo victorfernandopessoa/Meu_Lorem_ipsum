@@ -1,0 +1,358 @@
+// -- variáveis: tamanho de tela
+$sm:   576px;    // small -> mobile
+$md:   768px;    // medium -> tablets
+$lg:   992px;    // large ------------------- 
+$xl:  1200px;    // extra large ------------| ------> desktop
+$xxl: 1400px;    // extra extra large -------
+
+// -- variáveis: paleta de cores
+$default-silver:   #D0D7DE;
+
+
+
+/*
+    --  configurações root;
+*/
+html, body {
+    margin: 0px auto;
+    padding: 0px auto;
+    font-family: 'roboto', arial;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: #000000;
+}
+
+p {
+    margin: 0px;
+    line-height: 25px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+header {
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+}
+
+
+/*
+    --  configurações do container, inclusive
+    a responsividade de acordo com o tamanho do
+    dispositivo;
+*/
+.container {
+    margin: 0px auto;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+    transition: 0.3s;
+}
+
+.conteiner-flex, .sub-container-flex {
+    display: flex;
+    word-wrap: break-word;
+    transition: 0.3s;
+}
+
+@media only screen and (max-width: $sm){
+    .container {
+        max-width: 100%;
+        padding: 0px 15px;
+    }
+
+    .conteiner-flex {
+        flex-direction: column-reverse;
+    }
+
+    .navbar-list-menu {
+        display: none;
+    }
+}
+@media only screen and (min-width: $sm){
+    .container {
+        max-width: 540px;
+    }
+
+    .conteiner-flex {
+        flex-direction: column-reverse;
+    }
+
+    .navbar-list-menu {
+        display: none;
+    }
+}
+@media only screen and (min-width: $md){
+    .container {
+        max-width: 720px;
+    }
+
+    .navbar-list-menu {
+        display: block;
+    }
+
+    .conteiner-flex {
+        flex-direction: column-reverse;
+    }
+
+    .btn-menu-active{
+        display: none;
+    }
+}
+@media only screen and (min-width: $lg){
+    .container {
+        max-width: 960px;
+    }
+
+    .conteiner-flex {
+        flex-direction: row;
+    }
+}
+@media only screen and (min-width: $xl){
+    .container {
+        max-width: 1140px;
+    }
+}
+@media only screen and (min-width: $xxl){
+    .container {
+        max-width: 1320px;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+
+/*
+    --  configuração padrao do divisor <hr>;
+*/
+.hr-default {
+    width: 100%;
+    height: 1px;
+    background: $default-silver;
+}
+
+
+/*
+    --  Esta classe serve para dar espaço antes
+    da primeira linha do texto. Usado por padrão
+    40px;
+*/
+.indent {
+    text-indent: 20px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+
+/*
+    --  Esta classe é aplicada nas tags de texto,
+    serve para ser usanda no rodapé da página <footer>,
+    usando esta classe o texto herdará caracteristicas
+    como um margin-top de 15px e uma cor cinza.
+*/
+.developer-credits {
+    margin: {
+        top: 25px;
+        bottom: 25px;  
+    }
+    font-weight:100;
+    color: #808791;
+}
+
+/*
+    --  Esta classe é aplicada nas tags de button,
+    ao aplicar, certifique-se que dentro da classe,
+    possua a tag <a>, para ser aplicado na tag <a>
+    também.
+*/
+.btn-primary-border {
+    border: none;
+    background: transparent;
+    margin-right: 5px;
+    padding: 10px 0px;
+    border-radius: 5px;
+    border: 0.8px solid #96cbff;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+        background: #96cbff;
+        color: #FFFFFF;
+    }
+
+    a {
+        font-size: 14pt;
+        padding: 13px 15px;
+        box-sizing: border-box;
+        transition: 0.3s;
+        &:hover {
+            background: #96cbff;
+            color: #FFFFFF;
+        }
+    }
+
+    i {
+        font-size: 14pt;
+    }
+}
+
+.btn-menu-active {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.btn-menu-active i {
+    font-size: 20pt;
+}
+
+.btn-elipses {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    font-size: 14pt;
+    text-align: center;
+    cursor: pointer;
+    background: #000000;
+    color: #FFFFFF;
+    transition: 0.3s;
+    &:hover{
+        background: #FFFFFF;
+        color: #000000;
+        border: 1px solid #000000;
+    }
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 10px 10px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    border: none;
+    font-size: 12pt;
+    background: #000000;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        background:#2b2c2c;
+    }
+}
+
+
+/*
+    --  Estas classes serve para aplicar margin-right
+    em qualquer tipo de elemento.
+*/
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mr-4 {
+    margin-right: 4px;
+}
+
+.mr-3 {
+    margin-right: 3px;
+}
+
+.mr-2 {
+    margin-right: 2px;
+}
+
+.mr-1 {
+    margin-right: 1px;
+}
+
+/*
+    --  Estas classes serve para aplicar margin-top
+    em qualquer tipo de elemento.
+*/
+.mt-1 {
+    margin-top: 1px;
+}
+
+.mt-2 {
+    margin-top: 2px;
+}
+
+.mt-3 {
+    margin-top: 3px;
+}
+
+.mt-4 {
+    margin-top: 4px;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+.mt-6 {
+    margin-top: 6px;
+}
+
+.mt-7 {
+    margin-top: 7px;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-9 {
+    margin-top: 9px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+/*
+    -- Esta classe tem o objetivo em deixa um espaçamento
+    entre os elemento. obs: esta classe só funcionará apenas
+    se estiver usando a classe .container-flex.
+*/
+.space-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
